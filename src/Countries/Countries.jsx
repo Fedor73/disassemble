@@ -1,6 +1,7 @@
 import React from "react";
 import "./countries.scss";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default class Countries extends React.Component {
   constructor(props) {
@@ -23,6 +24,16 @@ export default class Countries extends React.Component {
         });
       })
       .catch(error => this.setState({ isLoaded: true, error }));
+    // axios
+    //   .get(`https://api.teleport.org/api/countries/geonameid:/`)
+    //   .then(res => {
+    //     const result = res.data;
+    //     this.setState({
+    //       isLoaded: true,
+    //       items: geoname_id
+    //     });
+    //   })
+    //   .catch(error => this.setState({ isLoaded: true, error }));
   }
 
   render() {
@@ -35,7 +46,9 @@ export default class Countries extends React.Component {
       return (
         <ul className="els">
           {items.map(item => (
-            <li key={item.name}>{item.name}</li>
+            <Link key={item.name} to="/Citi">
+              {item.name}
+            </Link>
           ))}
         </ul>
       );

@@ -2,7 +2,20 @@ import React from "react";
 import "./citi.scss";
 
 export default class Citi extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      value: null
+    };
+  }
   render() {
-    return <div>тут будет город</div>;
+    const { currencycode, name, population } = this.props;
+    return (
+      <div>
+        <span>{currencycode}</span>
+        <span>{name}</span>
+        <span>{population}</span>
+      </div>
+    );
   }
 }

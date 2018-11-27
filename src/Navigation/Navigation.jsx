@@ -14,9 +14,6 @@ const Navigation = () => {
         <li>
           <Link to="/Countries">Countries</Link>
         </li>
-        <li>
-          <Link to="/Citi">Citi</Link>
-        </li>
       </ul>
     </div>
   );
