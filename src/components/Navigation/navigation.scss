@@ -1,0 +1,18 @@
+.navigation {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0;
+  background: aquamarine;
+  margin: 0;
+  padding: 40px 0;
+
+  li {
+    margin-right: 30px;
+    list-style: none;
+    a {
+      text-decoration: none;
+      font-size: 20px;
+      color: black;
+    }
+  }
+}

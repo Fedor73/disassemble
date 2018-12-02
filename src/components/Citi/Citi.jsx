@@ -1,7 +1,7 @@
 import React from "react";
 import "./citi.scss";
 
-export default class Citi extends React.Component {
+export class Citi extends React.Component {
   constructor() {
     super();
     this.state = {
