@@ -1,18 +1,24 @@
 import React from "react";
 import "./navigation.scss";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 export const Navigation = () => {
   return (
     <div>
       <ul className="navigation">
         <li>
-          <Link to="/">Home</Link>
+          <NavLink activeClassName="active" exact to="/">
+            Home
+          </NavLink>
         </li>
         <li>
-          <Link to="/Countries">Countries</Link>
+          <NavLink activeClassName="active" to="/Countries">
+            Countries
+          </NavLink>
         </li>
         <li>
-          <Link to="/continents">continents</Link>
+          <NavLink activeClassName="active" to="/continents">
+            continents
+          </NavLink>
         </li>
       </ul>
     </div>

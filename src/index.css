@@ -12,3 +12,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.bacmain {
+  color: #003049;
+  background: transparent;
+  border-radius: 100px;
+  padding: 6px 16px 2px;
+  color: #003049;
+  background: #bcdcf5;
+  text-decoration: none;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+  width: auto;
+}

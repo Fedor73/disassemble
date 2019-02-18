@@ -1,7 +1,9 @@
 import React from "react";
 import "./countries.scss";
-import axios from "axios";
+// import axios from "axios";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { setProducts } from "../../actions/setCountries";
 
 export class Countries extends React.Component {
   constructor(props) {
@@ -14,16 +16,22 @@ export class Countries extends React.Component {
   }
 
   componentDidMount() {
-    axios
-      .get(`https://api.teleport.org/api/countries/`)
-      .then(res => {
-        const result = res.data;
-        this.setState({
-          isLoaded: true,
-          items: result._links["country:items"]
-        });
-      })
-      .catch(error => this.setState({ isLoaded: true, error }));
+    fetch("https://api.teleport.org/api/countries/")
+      .then(res => res.json())
+      .then(
+        result => {
+          this.setState({
+            isLoaded: true,
+            items: result._links["country:items"]
+          });
+        },
+        error => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      );
   }
 
   render() {
@@ -45,3 +53,17 @@ export class Countries extends React.Component {
     }
   }
 }
+
+const mapStateToProps = country => ({
+  country: country.items,
+  isReady: country.isReady
+});
+
+const mapDispatchToProps = dispatch => ({
+  setProducts: country => dispatch(setProducts(country))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Countries);

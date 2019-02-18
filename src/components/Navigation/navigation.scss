@@ -1,18 +1,28 @@
 .navigation {
   display: flex;
   justify-content: flex-start;
-  padding: 0;
-  background: aquamarine;
   margin: 0;
-  padding: 40px 0;
+  padding: 20px 27px;
 
   li {
     margin-right: 30px;
     list-style: none;
     a {
+      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 400;
       text-decoration: none;
-      font-size: 20px;
-      color: black;
+      text-transform: uppercase;
+      color: #333;
+      padding: 10px 5px;
+      letter-spacing: 0.05em;
+
+      &:hover {
+        color: #d85944;
+      }
+
+      &.active {
+        color: #d85944;
+      }
     }
   }
 }

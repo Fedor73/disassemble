@@ -1,5 +1,5 @@
 const initialState = {
-  name: "test-mapstate-to-props"
+  name: "тестовое задание от Alexey"
 };
 export function userReducer(state = initialState) {
   return state;

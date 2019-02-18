@@ -1,4 +1,4 @@
-export const setCountries = Countries => ({
-  type: "SET_Countries",
-  payload: Countries
+export const setProducts = newCountry => ({
+  type: "SET_PRODUCT",
+  payload: newCountry
 });
