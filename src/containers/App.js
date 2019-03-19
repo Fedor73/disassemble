@@ -7,37 +7,40 @@ import { Continents } from "../components/Continents/Continents";
 import { Countries } from "../components/Countries/Countries";
 import { Home } from "../components/Home/Home";
 import { Citi } from "../components/Citi/Citi";
+import CountriesRedux from "./CountriesRedux"
 
 class App extends Component {
-  render() {
-    const { user } = this.props;
-    return (
-      <Router>
-        <div className="app">
-          <User name={user.name}>
-            <Navigation />
-          </User>
+    render() {
+        const { user } = this.props;
+        return (
+            <Router>
+                <div className="app">
+                    <CountriesRedux />
+                    <User name={user.name}>
+                        <Navigation />
+                    </User>
 
-          <Route exact path="/" component={Home} />
-          <Route path="/Continents" component={Continents} />
-          <Route path="/Countries" component={Countries} />
-          <Route path="/Citi/:id" component={Citi} />
-          <Route path="/Citi" component={Citi} />
-        </div>
-      </Router>
-    );
-  }
+
+                    <Route exact path="/" component={Home} />
+                    <Route path="/Continents" component={Continents} />
+                    <Route path="/Countries" component={Countries} />
+                    <Route path="/Citi/:id" component={Citi} />
+                    <Route path="/Citi" component={Citi} />
+                </div>
+            </Router >
+        );
+    }
 }
 const mapStateToProps = store => {
-  return {
-    // user: store.user
-    ...store
-  };
+    return {
+        // user: store.user
+        ...store
+    };
 };
 
 const mapDispatchToProps = dispatch => ({});
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+    mapStateToProps,
+    mapDispatchToProps
 )(App);
